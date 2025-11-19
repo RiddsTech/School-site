@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clevermind student dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
+    <style>
+        :root {
+            --first-color: rgb(12, 82, 12);
+            --font-family: 'Noto Sans';
+            --font-color: #fff;
+            --font-color2: orange;
+            --color1: rgb(0, 0, 26);
+            --font-family2: 'AvantGarde Md BT';
+        }
+
+        * {
+            margin: auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 100%;
+            min-height: 100vh;
+            font-family: var(--font-family);
+            top: -100px;
+        }
+
+        section {
+            width: 100%;
+            height: 100%;
+        }
+
+        .join {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-bar {
+            background: var(--first-color);
+            padding: 20px;
+            margin: 0;
+            height: 870px;
+            width: 15%;
+            z-index: 1;
+        }
+
+        .tog-cover {
+            display: none;
+        }
+
+        .tog {
+            border: 1px solid var(--font-color);
+            padding: 10px;
+            width: 40px;
+            height: 40px;
+            margin: 20px 0 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #icon-x {
+            font-size: 20px;
+            color: var(--font-color);
+        }
+
+        #logo {
+            width: 150px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        #line1 {
+            border: 1px solid var(--font-color);
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            list-style: none;
+            line-height: 50px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: var(--font-color);
+            font-family: var(--font-family2);
+            transition: .5s ease;
+            padding: 10px;
+        }
+
+        li:hover {
+            transition: .5s ease-in-out;
+            background: forestgreen;
+            cursor: pointer;
+        }
+
+        /* dashboard */
+        .detail {
+            width: 85%;
+            height: 870px;
+            padding: 20px 20px 0 20px;
+            margin: 0;
+        }
+
+        .top-head {
+            background: var(--first-color);
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #head {
+            font-size: 40px;
+            width: 80%;
+            margin: 0;
+        }
+
+        .me {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 12%;
+            margin: 0 30px 0 0;
+            cursor: pointer;
+        }
+
+        #icon1 {
+            font-size: 30px;
+            margin-right: 10px;
+        }
+
+        .icon-ii {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            border: 2px solid var(--font-color);
+            margin: 0px;
+            cursor: default;
+        }
+
+        #icon2 {
+            font-size: 20px;
+            color: var(--font-color);
+        }
+
+        .prime {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0 0 0;
+            width: 100%;
+        }
+
+        .photo {
+            margin: 0;
+            height: 250px;
+            width: 230px;
+        }
+
+        #cate {
+            font-weight: normal;
+            font-size: 18px;
+        }
+
+        .icon-i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            height: 120px;
+            width: 120px;
+            border: 3px solid gray;
+            margin: 0 0 20px 0;
+        }
+
+        #icon3 {
+            font-size: 80px;
+            color: gray;
+        }
+
+        #btn1 {
+            padding: 0px 20px;
+            margin-top: 10px;
+        }
+
+        #cite {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .pupil {
+            margin: none;
+        }
+
+        .main-info {
+            margin: 0;
+            height: 250px;
+        }
+
+        #stu-id {
+            display: none;
+        }
+
+        #user {
+            font-size: 35px;
+        }
+
+        .id-num {
+            height: 250px;
+            width: 60%;
+            text-align: center;
+        }
+
+        h5 {
+            font-weight: normal;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* Academic profile */
+        .academic {
+            border: 2px solid gray;
+            padding: 20px;
+        }
+
+        #line2 {
+            border: 1px solid gray;
+            margin: 10px 0;
+        }
+
+        .all {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            width: 500px;
+        }
+
+        .school {
+            margin: 0;
+            height: 220px;
+            width: 250px;
+        }
+
+        .edu {
+            margin-bottom: 10px;
+            line-height: 30px;
+        }
+
+        #on {
+            background: forestgreen;
+            color: var(--font-color);
+            padding: 3px 8px;
+            width: 70px;
+            margin: 0;
+            cursor: default;
+        }
+
+        /* Notice */
+        .notice {
+            margin-top: 20px;
+            background: var(--first-color);
+            padding: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            color: var(--font-color);
+            height: 165px;
+        }
+
+        #im {
+            margin-bottom: 10px;
+            color: var(--font-color2);
+        }
+
+        @media screen and (max-width: 1200px) {
+            .top-head{
+                margin: -20px -20px 10px -20px;
+            }
+            .tog-cover {
+                display: block;
+                z-index: 1;
+            }
+
+            .tog {
+                margin-top: 0;
+            }
+
+            #head {
+                width: 70%;
+            }
+
+            .me {
+                width: 15%;
+                /* margin: 0; */
+            }
+
+            #mainv {
+                display: none;
+                z-index: 1;
+                position: absolute;
+                left: 0;
+                width: 20%;
+            }
+
+            #logo {
+                margin-top: 50px;
+            }
+
+            .detail {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 950px) {
+            #mainv {
+                width: 30%;
+            }
+
+            .prime {
+                width: 100%;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .photo {
+                width: 25%;
+            }
+
+            .pupil {
+                margin: 0;
+                width: 35%;
+            }
+
+            .main-info {
+                width: 100%;
+            }
+
+            .id-num {
+                width: 40%;
+                margin: 0;
+            }
+        }
+
+        @media screen and (max-width: 770px) {
+            #mainv {
+                width: 40%;
+                height: 900px;
+            }
+
+            .detail {
+                height: 900px;
+            }
+
+            .tog-cover {
+                margin-right: 10px;
+                margin-left: 0;
+            }
+
+            #head {
+                width: 60%;
+                font-size: 30px;
+            }
+
+            .me {
+                width: 20%;
+            }
+
+            .photo {
+                width: 50%;
+            }
+
+            .pupil {
+                margin: 0;
+                width: 50%;
+                height: 250px;
+            }
+
+            .main-info {
+                width: 100%;
+                height: 120px;
+            }
+
+            #stu-id {
+                display: block;
+                height: 40px;
+                width: 100%;
+                text-align: left;
+            }
+
+            .id-num {
+                display: none;
+            }
+
+            .notice {
+                height: 200px;
+            }
+        }
+
+        @media screen and (max-width: 540px) {
+
+            /* Head Section */
+            #mainv {
+                width: 50%;
+                height: 1100px;
+            }
+
+            .detail {
+                height: 1100px;
+            }
+
+            .tog {
+                padding: 7px;
+                width: 30px;
+                height: 30px;
+                margin: 0;
+            }
+
+            #icon-x {
+                font-size: 15px;
+            }
+
+            #head {
+                font-size: 23px;
+            }
+
+            #icon-1 {
+                font-size: 12px;
+            }
+
+            #text-me {
+                display: none;
+            }
+
+            /* Student details */
+            .prime {
+                display: block;
+            }
+
+            .photo {
+                width: 100%;
+                height: 230px;
+            }
+
+            .pupil {
+                width: 100%;
+                height: 170px;
+            }
+
+            .main-info {
+                width: 100%;
+                height: 120px;
+            }
+
+            .id-num {
+                width: 100%;
+                height: 40px;
+                text-align: left;
+            }
+
+            /* Academics section */
+            .all {
+                width: 360px;
+            }
+
+            .school {
+                width: 180px;
+            }
+
+            .notice {
+                height: 280px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            /* head section */
+            #mainv {
+                width: 61%;
+                height: 1310px;
+            }
+
+            .detail {
+                height: 1310px;
+            }
+
+            .me {
+                width: 40px;
+                margin-right: 5px;
+            }
+
+            #icon1 {
+                font-size: 20px;
+                margin: 0;
+            }
+
+            .icon-ii {
+                height: 30px;
+                width: 30px;
+            }
+
+            #icon2 {
+                font-size: 15px;
+            }
+
+            #user {
+                font-size: 28px;
+            }
+
+            /* Academic profile */
+            .all {
+                width: 200px;
+                display: block;
+            }
+
+            .school {
+                width: 150px;
+            }
+
+            #hedu {
+                font-size: 14px;
+            }
+
+            #tedu {
+                font-size: 14px;
+            }
+
+            #on {
+                font-size: 14px;
+            }
+
+            #inbox {
+                font-size: 14px;
+            }
+
+            .notice {
+                height: 300px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <div class="join">
+            <div class="nav-bar" id="mainv">
+
+                <div class="main-nav">
+                    <img src="images/clever mind logo text.png" alt="school logo" id="logo">
+                    <hr id="line1">
+                    <ul>
+                        <li><a href="dashboard.html" class="menu"><i class="fa-solid fa-user"></i> Dashboard</a></li>
+                        <li><a href="result.html" class="menu"><i class="fa-solid fa-scroll-torah"></i> Result
+                                Center</a>
+                        </li>
+                        <li><a href="subjects.html" class="menu"><i class="fa-solid fa-book"></i> Subjects</a></li>
+                        <li><a href="payment.html" class="menu"><i class="fa-solid fa-money-bill"></i> Payments</a></li>
+                        <li><a href="#" class="menu"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="detail">
+                <div class="top-head">
+                    <div class="tog-cover">
+                        <div class="tog" id="toggleBtn">
+                            <i class="fa-solid fa-bars" id="icon-x"></i>
+                        </div>
+                    </div>
+                    <h1 id="head">Student Profile</h1>
+
+                    <div class="me">
+                        <i class="fa-regular fa-message" id="icon1"></i>
+                        <p id="text-me">messages</p>
+                    </div>
+                    <div class="icon-ii">
+                        <i class="fas fa-user" id="icon2"></i>
+                    </div>
+                </div>
+
+                <div class="prime">
+                    <div class="photo">
+                        <div class="icon-i">
+                            <i class="fas fa-user" id="icon3"></i>
+                        </div>
+                        <div class="choose">
+                            <input type="file" id="passport" name="passport" accept=".jpg, .png, .jpeg, .svg">
+                        </div>
+                        <a href="#">
+                            <input type="submit" name="btn1" id="btn1" value="Upload">
+                        </a>
+
+                        <p id="cite"><i>Upload passport photograph</i></p>
+                    </div>
+
+                    <div class="pupil">
+                        <div class="main-info">
+                            <h2 id="user">John Carlson</h2>
+                            <h4 id="cate">Gender: Male</h4>
+                            <h4 id="cate">DOB: 11/06/2015</h4>
+                        </div>
+
+                        <div class="id-num" id="stu-id">
+                            <h5><i>Student ID: clm/2425/bas5/010</i></h5>
+                        </div>
+                    </div>
+
+                    <div class="id-num">
+                        <h5><i>Student ID: clm/2425/bas5/010</i></h5>
+                    </div>
+                </div>
+
+                <!-- academic profile -->
+                <div class="academic">
+                    <h2 id="sub-head">Academic Profile</h2>
+                    <hr id="line2">
+                    <div class="all">
+                        <div class="school">
+                            <div class="edu">
+                                <h4 id="hedu">ACADEMIC SESSION</h4>
+                                <p id="tedu">2025/2026</p>
+                            </div>
+
+                            <div class="edu">
+                                <h4 id="hedu">CLASS GRADE</h4>
+                                <p id="tedu">BASIC 5</p>
+                            </div>
+
+                            <div class="edu">
+                                <h4 id="hedu">ACADEMIC STATUS</h4>
+                                <p id="on">ACTIVE</p>
+                            </div>
+
+                        </div>
+
+                        <div class="school">
+                            <div class="edu">
+                                <h4 id="hedu">YEAR OF ENTRY</h4>
+                                <p id="tedu">2024</p>
+                            </div>
+
+                            <div class="edu">
+                                <h4 id="hedu">CURRENT TERM</h4>
+                                <p id="tedu">2ND TERM</p>
+                            </div>
+
+                            <div class="edu">
+                                <h4 id="hedu">ATTENDANCE</h4>
+                                <p id="tedu">43/80</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- message -->
+                <div class="notice">
+                    <h2 id="im">*Important Notice!</h2>
+                    <p id="inbox">
+                        All students that enrolled online are to visit the school for carrying out of academic
+                        assessment
+                        and other academic purposes. Parents/Guardians should ensure that their wards are active in
+                        school
+                        activities and check student portal regulary for information or instruction from school
+                        managment.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('toggleBtn');
+            const toggleContent = document.getElementById('mainv');
+            const icon = document.getElementById('icon-x');
+
+            toggleBtn.addEventListener('click', function () {
+                // Toggle content visibility
+                if (toggleContent.style.display === 'block') {
+                    toggleContent.style.display = 'none';
+                    icon.className = 'fa-solid fa-caret-right';
+                } else {
+                    toggleContent.style.display = 'block';
+                    icon.className = 'fa-solid fa-bars';
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

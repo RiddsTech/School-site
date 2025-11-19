@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleverMind Enrollment Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
+    <style>
+        :root {
+            --first-color: rgb(12, 82, 12);
+            --font-family: 'Noto Sans';
+            --font-color: #fff;
+            --font-color2: orange;
+            --color1: rgb(0, 0, 26);
+            --color2: #e6e6e6bb;
+        }
+
+        * {
+            padding: 0;
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 100%;
+        }
+
+        nav {
+            background: var(--first-color);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 230px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        #logo {
+            width: 200px;
+            margin: 10px;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        li a {
+            text-decoration: none;
+            color: var(--font-color);
+            margin-right: 30px;
+            font-family: var(--font-family);
+            padding: 10px;
+            transition: .7s ease;
+            border-radius: 5px;
+        }
+
+        #nav-link:hover {
+            background: forestgreen;
+            transition: .7s ease-in-out;
+        }
+
+        #nav-btn {
+            background: #ffffff4d;
+            border-radius: 20px;
+            padding: 10px 20px;
+            transition: .7s ease;
+        }
+
+        #nav-btn:hover {
+            background: #000;
+            transition: .7s ease-in-out;
+        }
+
+        #tog-btn {
+            display: none;
+            font-size: 20px;
+            background: transparent;
+            color: var(--font-color);
+            border: none;
+            cursor: pointer;
+        }
+
+        /* THEME */
+        .theme {
+            width: 100%;
+            height: 515px;
+            background: #f0f0f0;
+        }
+
+        .grouped {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .startup {
+            text-align: left;
+            width: 50%;
+        }
+
+        #hstart {
+            font-size: 80px;
+            font-family: 'Tahoma';
+        }
+
+        #sub {
+            font-family: var(--font-family);
+            letter-spacing: 1px;
+            font-size: 14px;
+            color: rgb(105, 105, 105);
+            text-align: center;
+        }
+
+        #image4 {
+            width: 51%;
+        }
+
+        /* STUDENT */
+        .student {
+            width: 100%;
+            padding: 30px 70px;
+        }
+
+        #hstudent {
+            font-size: 40px;
+            font-family: var(--font-family);
+        }
+
+        #im {
+            color: red;
+        }
+
+        label,
+        #subs {
+            font-family: var(--font-family);
+            letter-spacing: 1px;
+            font-size: 14px;
+            color: rgb(105, 105, 105);
+        }
+
+        #tstudent {
+            font-family: var(--font-family);
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: -20px;
+        }
+
+        .form-group2 {
+            margin-left: 0px;
+            width: 100%;
+        }
+
+        #text1 {
+            width: 90%;
+            padding: 10px;
+            outline: none;
+        }
+
+        #text2 {
+            width: 100%;
+            padding: 10px;
+            outline: none;
+        }
+
+        .inp {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .inp2 {
+            display: flex;
+            flex-direction: column;
+            width: 33%;
+            margin-left: 0px;
+        }
+
+        .inp3 {
+            width: 23%;
+        }
+
+        .inp4 {
+            width: 100%;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            /* Removes a small default margin that Firefox sometimes uses */
+        }
+
+        .form-group3 {
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: -20px;
+        }
+
+        .pledge {
+            margin-top: 20px;
+            font-family: var(--font-family);
+            color: rgb(105, 105, 105);
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+        }
+
+        .btn7 {
+            padding: 13px 28px;
+            font-family: var(--font-family);
+            font-size: 22px;
+            margin-top: 30px;
+            background: var(--first-color);
+            color: var(--font-color);
+            border: none;
+            border-radius: 30px;
+            transition: 1s ease;
+            cursor: pointer;
+        }
+
+        .btn7:hover {
+            background: forestgreen;
+            transition: 1s ease-in-out;
+        }
+
+        @media screen and (max-width: 1100px) {
+            nav {
+                display: block;
+                gap: 100px;
+                margin-bottom: -10px;
+            }
+
+            #tog-btn {
+                display: block;
+            }
+
+            #menu {
+                display: none;
+            }
+
+            #menu.active {
+                display: block;
+            }
+
+            .navig {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 250px;
+            }
+
+            ul li {
+                display: grid;
+                place-content: center;
+                margin-bottom: 10px;
+            }
+
+            #nav-btn {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 960px) {
+            .theme {
+                height: 370px;
+            }
+
+            .startup {
+                padding: 30px;
+            }
+
+            #hstart {
+                font-size: 60px;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 760px) {
+            .form-group {
+                display: block;
+            }
+
+            .inp {
+                margin-left: -10px;
+                line-height: 40px;
+            }
+
+            #subs {
+                margin: 0;
+            }
+
+            label {
+                text-align: left;
+                margin: 0 0 0 30px;
+            }
+
+            .inp2 {
+                width: 40%;
+                margin-left: 8px;
+            }
+
+            .emailtext1 {
+                margin-left: -8px;
+            }
+
+            .form-group3 {
+                width: 100%;
+                margin-left: -20px;
+                display: block;
+            }
+
+            .textinp {
+                margin-left: -10px;
+            }
+
+            .pledge {
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .navig {
+                gap: 150px;
+            }
+
+            .theme {
+                height: 600px;
+            }
+
+            .startup {
+                width: 100%;
+            }
+
+            .grouped {
+                display: block;
+            }
+
+            #image4{
+                width: 100%;
+            }
+
+            .student{
+                padding: 30px 40px;
+            }
+
+            .inp {
+                margin-left: 0px;
+            }
+
+            .inp2 {
+                margin-left: 12px;
+                width: 50%;
+            }
+
+            .emailtext1 {
+                margin-left: -12px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .navig{
+                gap: 60px;
+            }
+
+            #hstudent{
+                font-size: 28px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <head>
+        <nav>
+            <div class="navig">
+                <div class="logo">
+                    <img src="images/clever mind logo text.png" alt="our logo" id="logo">
+                </div>
+
+                <button class="menu-toggle" onclick="toggleMenu()" id="tog-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <ul id="menu">
+                <li><a href="clever_mind.html" id="nav-link">Home</a></li>
+                <li><a href="clever_academic.html" id="nav-link">Academics</a></li>
+                <li><a href="clever_enrol.html" id="nav-link">Enrol</a></li>
+                <li><a href="clever_login.html" id="nav-link">Student Login</a></li>
+                <li><a href="mailto:clevermindschool@gmail.com?subject=Letter%20of%20Enquiry" id="nav-btn">For Enquiry</a></li>
+            </ul>
+
+        </nav>
+    </head>
+
+    <!-- Theme -->
+    <div class="theme">
+        <div class="grouped">
+            <div class="startup">
+                <h2 id="hstart">Enrol Your Child</h2>
+                <h5 id="sub">Register your children to get the outmost education we give.</h5>
+            </div>
+
+            <img src="images/pic4.png" alt="student image" id="image4">
+        </div>
+    </div>
+
+    <!-- Student info -->
+    <div class="student">
+        <h3 id="hstudent">Student Information</h3>
+        <h5 id="subs"><i>Note: parameters marked with the <span id="im">*</span> symbol indicate important information
+                and must be filled.</i></h5>
+
+        <h4 id="tstudent">NAME <span id="im">*</span></h4>
+        <div class="form-group">
+            <div class="inp">
+                <input type="text" name="text1" id="text1" required>
+                <label for="text1"><i>Last Name</i></label>
+            </div>
+
+            <div class="inp">
+                <input type="text" name="text1" id="text1" required>
+                <label for="text1"><i>First Name</i></label>
+            </div>
+
+            <div class="inp">
+                <input type="text" name="text1" id="text1" required>
+                <label for="text1"><i>Other Names (Optional)</i></label>
+            </div>
+        </div>
+
+        <h4 id="tstudent">DATE OF BIRTH <span id="im">*</span></h4>
+        <div class="form-group">
+            <div class="inp2">
+                <input type="date" name="text1" id="text1" required>
+            </div>
+        </div>
+
+        <h4 id="tstudent">GENDER <span id="im">*</span></h4>
+        <div class="form-group">
+            <div class="inp2">
+                <select name="text1" id="text1" required>
+                    <option value="">Select</option>
+                    <option value="01">Male</option>
+                    <option value="02">Female</option>
+                </select>
+            </div>
+        </div>
+
+        <h4 id="tstudent">EMAIL ADDRESS <span id="im">*</span></h4>
+        <div class="form-group2">
+            <div class="inp2">
+                <input type="email" name="text1" id="text2" class="emailtext1" required>
+            </div>
+        </div>
+
+        <h4 id="tstudent">ADDRESS</h4>
+        <div class="form-group2">
+            <div class="inp4">
+                <input type="text" name="text1" id="text2" required>
+            </div>
+        </div>
+
+        <h4 id="tstudent">GRADE LEVEL <span id="im">*</span></h4>
+        <div class="form-group">
+            <div class="inp2">
+                <select name="text1" id="text1" required>
+                    <option value="">Select</option>
+                    <option value="01">Basic</option>
+                    <option value="02">Junior</option>
+                    <option value="03">Senior</option>
+                </select>
+            </div>
+        </div>
+
+        <h4 id="tstudent">CLASS GRADE <span id="im">*</span></h4>
+        <div class="form-group">
+            <div class="inp2">
+                <select name="text1" id="text1" required>
+                    <option value="">Select</option>
+                    <option value="01">Basic 1</option>
+                    <option value="02">Basic 2</option>
+                    <option value="03">Basic 3</option>
+                    <option value="03">Basic 4</option>
+                    <option value="03">Basic 5</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Parent info -->
+    <div class="student">
+        <h3 id="hstudent">Parent/Guardian Information</h3>
+        <h5 id="subs"><i>Note: parameters marked with the <span id="im">*</span> symbol indicate important information
+                and must be filled.</i></h5>
+
+        <h4 id="tstudent">NAME <span id="im">*</span></h4>
+        <div class="form-group3">
+            <div class="inp">
+                <input type="text" name="text1" id="text1" required>
+                <label for="text1"><i>Last Name</i></label>
+            </div>
+
+            <div class="inp">
+                <input type="text" name="text1" id="text1" required>
+                <label for="text1"><i>First Name</i></label>
+            </div>
+        </div>
+
+        <h4 id="tstudent">PHONE NUMBER <span id="im">*</span></h4>
+        <div class="form-group2">
+            <div class="inp2">
+                <input type="number" name="text1" id="text2" class="textinp" required>
+            </div>
+        </div>
+
+        <h4 id="tstudent">EMAIL ADDRESS</h4>
+        <div class="form-group2">
+            <div class="inp2">
+                <input type="email" name="text1" id="text2" class="textinp" required>
+            </div>
+        </div>
+
+        <h4 id="tstudent">OCCUPATION</h4>
+        <div class="form-group2">
+            <div class="inp2">
+                <input type="text" name="text1" id="text2" class="textinp" required>
+            </div>
+        </div>
+
+        <h4 id="tstudent">ADDRESS</h4>
+        <div class="form-group2">
+            <div class="inp4">
+                <input type="text" name="text1" id="text2" required>
+            </div>
+        </div>
+
+        <label for="check" class="pledge">
+            <input type="checkbox" name="check" id="check"> I pledge and agree that all information provided
+            above is true and valid by the Government.
+        </label>
+
+        <a href="#" target="_blank">
+            <button type="submit" class="btn7">Register</button>
+        </a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menuBar = document.getElementById('menu');
+            menuBar.classList.toggle('active');
+        }
+
+        // Optional: Keep menu state in sessionStorage
+        window.addEventListener('beforeunload', function () {
+            const menuBar = document.getElementById('menu');
+            sessionStorage.setItem('menuState', menuBar.classList.contains('active'));
+        });
+
+        window.addEventListener('load', function () {
+            const savedState = sessionStorage.getItem('menuState');
+            if (savedState === 'true') {
+                document.getElementById('menu').classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

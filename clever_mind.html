@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleverMind School Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
+    <style>
+        :root {
+            --first-color: rgb(12, 82, 12);
+            --font-family: 'Noto Sans';
+            --font-color: #fff;
+            --font-color2: orange;
+            --color1: rgb(0, 0, 26);
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        * {
+            padding: 0;
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 100%;
+            min-height: 100vh;
+        }
+
+        nav {
+            background: var(--first-color);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 230px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        #logo {
+            width: 200px;
+            margin: 10px;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        li a {
+            text-decoration: none;
+            color: var(--font-color);
+            margin-right: 30px;
+            font-family: var(--font-family);
+            padding: 10px;
+            transition: .7s ease;
+            border-radius: 5px;
+        }
+
+        #nav-link:hover {
+            background: forestgreen;
+            transition: .7s ease-in-out;
+        }
+
+        #nav-btn {
+            background: #ffffff4d;
+            border-radius: 20px;
+            padding: 10px 20px;
+            transition: .7s ease;
+        }
+
+        #nav-btn:hover {
+            background: #000;
+            transition: .7s ease-in-out;
+        }
+
+        #tog-btn {
+            display: none;
+            font-size: 20px;
+            background: transparent;
+            color: var(--font-color);
+            border: none;
+            cursor: pointer;
+        }
+
+        /* SECTION */
+        section {
+            background-image: url(images/pic2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 550px;
+        }
+
+        .intro {
+            font-family: var(--font-family);
+            padding: 80px;
+            background: linear-gradient(to right, rgb(12, 82, 12), rgb(255, 0, 0, 0));
+            color: var(--font-color);
+            height: 100%;
+        }
+
+        #intro-top {
+            font-size: 70px;
+        }
+
+        #intro-main {
+            font-size: 100px;
+        }
+
+        #intro-state {
+            font-size: 20px;
+        }
+
+        #btn1 {
+            padding: 10px 25px;
+            font-family: 'Tahoma';
+            font-size: 25px;
+            margin-top: 20px;
+            border-radius: 25px;
+            border: none;
+            background: var(--font-color2);
+            cursor: pointer;
+            transition: .7s ease;
+        }
+
+        #btn1:hover {
+            background: #000;
+            color: var(--font-color);
+            transition: .7s ease-in-out;
+        }
+
+        .to {
+            background: rgb(0, 0, 26);
+            color: var(--font-color2);
+            font-family: var(--font-family);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            margin: 0px;
+        }
+
+        .toge {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #icon1 {
+            background: var(--font-color2);
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 30px;
+        }
+
+        #base-head {
+            font-size: 40px;
+        }
+
+        #rem {
+            font-size: 20px;
+        }
+
+        #btn2 {
+            background: transparent;
+            border-radius: 30px;
+            padding: 15px 25px;
+            font-size: 20px;
+            border: 2px solid var(--font-color2);
+            color: orange;
+            transition: .4s ease;
+            cursor: pointer;
+        }
+
+        #btn2:hover {
+            transition: .4s ease-in-out;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        /* ABOUT */
+        .about {
+            height: 700px;
+            margin-top: 150px;
+            width: 100%;
+            padding-top: 80px;
+        }
+
+        .about-join {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image2 {
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            border: 8px solid var(--font-color2);
+        }
+
+        .topic {
+            width: 550px;
+            height: 450px;
+        }
+
+        #topic-head {
+            font-size: 30px;
+            font-family: 'Tahoma';
+            margin-bottom: 25px;
+        }
+
+        #topic-text {
+            font-family: 'Tahoma';
+            font-size: 20px;
+            text-align: justify;
+        }
+
+        #btn3 {
+            padding: 15px 25px;
+            background: var(--color1);
+            margin-top: 20px;
+            color: var(--font-color2);
+            border: none;
+            font-size: 15px;
+            font-family: 'Tahoma';
+            transition: .5s ease-in-out;
+            cursor: pointer;
+        }
+
+        #btn3:hover {
+            transition: .5s ease-in-out;
+            color: #fff;
+            background: #000;
+        }
+
+        /* OFFER */
+        .offer {
+            height: 500px;
+            width: 100%;
+            background: #e6e6e6bb;
+            padding-top: 40px;
+        }
+
+        #offer-title {
+            font-size: 30px;
+            font-family: var(--font-family);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .offer-block {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .block1,
+        .block2 {
+            width: 350px;
+            height: 300px;
+            color: var(--font-color);
+            margin: 0;
+            padding: 20px;
+            font-family: var(--font-family);
+            text-align: center;
+        }
+
+        .block1 {
+            background: var(--first-color);
+        }
+
+        .block2 {
+            background: var(--color1);
+        }
+
+        #icon2 {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            background: var(--font-color);
+            color: var(--first-color);
+            border-radius: 50%;
+        }
+
+        #offer-head {
+            font-size: 20px;
+            margin: 15px 0px;
+        }
+
+        .btn4 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #btn4 {
+            background: var(--font-color2);
+            color: #000;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-family: 'Tahoma';
+            font-size: 18px;
+            margin: 20px 0px;
+            transition: .5s ease;
+        }
+
+        #btn4:hover {
+            transform: scaleX(110%);
+            transition: .5s ease-in-out;
+        }
+
+        /* ADVERT */
+        .advert {
+            background-image: url(images/back1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 400px;
+            width: 100%;
+            z-index: -1;
+            content: '';
+            padding-top: 50px;
+        }
+
+        #ad-text {
+            color: var(--font-color);
+            font-family: var(--font-family);
+            font-size: 70px;
+            width: 85%;
+        }
+
+        #small {
+            font-size: 60px;
+        }
+
+        #big {
+            font-size: 110px;
+        }
+
+        /* FOOTER */
+        footer {
+            height: 300px;
+            width: 100%;
+            background: var(--first-color);
+        }
+
+        .con,
+        .foot-cover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #logofooter {
+            width: 400px;
+            margin-top: -50px;
+        }
+
+        .touch {
+            width: 350px;
+            color: var(--font-color);
+            font-family: 'Tahoma';
+            font-size: 16px;
+        }
+
+        #touch-head {
+            font-size: 25px;
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+
+        #icon3 {
+            margin-right: 20px;
+            font-size: 20px;
+        }
+
+        .fa-ul {
+            margin-left: 0px;
+        }
+
+        #list2 {
+            cursor: pointer;
+            transition: .5s ease;
+            display: inline;
+            line-height: 45px;
+            margin-left: -5px;
+            margin-right: 0px;
+            font-family: 'Tahoma';
+        }
+
+        .link:hover,
+        #list:hover,
+        #list2:hover {
+            color: var(--font-color2);
+            transition: .5s ease-in-out;
+        }
+
+        #list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: .5s ease;
+            margin-bottom: 15px;
+        }
+
+        #add {
+            margin-left: 10px;
+        }
+
+        .link {
+            margin-bottom: 50px;
+            text-decoration: none;
+            font-family: 'Tahoma';
+            font-size: 18px;
+            color: var(--font-color);
+            transition: .5s ease;
+            line-height: 35px;
+        }
+
+        @media screen and (max-width: 1100px) {
+            nav {
+                gap: 150px;
+            }
+
+            #icon1 {
+                margin-right: 30px;
+                margin-left: 10px;
+            }
+
+            .part {
+                width: 600px;
+            }
+
+            #btn2 {
+                margin-left: 10px;
+            }
+
+            /* ABOUT */
+            .about {
+                height: 600px;
+            }
+
+            .image2 {
+                width: 400px;
+                height: 400px;
+            }
+
+            .topic {
+                width: 450px;
+                height: 400px;
+            }
+
+            #topic-head {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            #topic-text {
+                font-size: 18px;
+                text-align: justify;
+            }
+
+            /* OFFER */
+            .offer {
+                height: 620px;
+            }
+
+            .block1,
+            .block2 {
+                height: 420px;
+            }
+
+            /* FOOTER */
+            #logofooter {
+                width: 300px;
+                margin-top: -100px;
+            }
+
+            .touch {
+                width: 300px;
+                color: var(--font-color);
+                font-family: 'Tahoma';
+                font-size: 16px;
+            }
+
+            #touch-head {
+                font-size: 25px;
+                margin-bottom: 20px;
+                margin-top: 50px;
+            }
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1000px) {
+            nav {
+                display: block;
+                gap: 100px;
+                margin-bottom: -10px;
+            }
+
+            #tog-btn {
+                display: block;
+            }
+
+            #menu {
+                display: none;
+            }
+
+            #menu.active {
+                display: block;
+            }
+
+            .navig {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 250px;
+            }
+
+            ul li {
+                display: grid;
+                place-content: center;
+                margin-bottom: 10px;
+            }
+
+            #nav-btn {
+                margin-bottom: 20px;
+            }
+
+            .toge {
+                margin: 0;
+            }
+
+            #icon1 {
+                width: 80px;
+                height: 80px;
+                font-size: 60px;
+                margin-right: 30px;
+            }
+
+            .part {
+                width: 450px;
+            }
+
+            #base-head {
+                font-size: 35px;
+            }
+
+            #rem {
+                font-size: 18px;
+            }
+
+            #btn2 {
+                margin: 20px;
+                font-size: 18px;
+            }
+
+            .topic {
+                width: 400px;
+            }
+
+            #topic-text {
+                font-size: 15px;
+            }
+
+            .advert {
+                height: 500px;
+            }
+
+            #big {
+                font-size: 90px;
+            }
+
+            #logofooter {
+                width: 250px;
+                margin-left: 30px;
+            }
+
+            .touch {
+                width: 250px;
+                font-size: 12px;
+                margin: 0px 0px 0px 35px;
+            }
+
+            #touch-head {
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
+
+            #icon3 {
+                font-size: 16px;
+                margin-right: 0px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                display: block;
+                gap: 100px;
+                margin-bottom: -10px;
+            }
+
+            #tog-btn {
+                display: block;
+            }
+
+            #menu {
+                display: none;
+            }
+
+            #menu.active {
+                display: block;
+            }
+
+            .navig {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 250px;
+            }
+
+            ul li {
+                display: grid;
+                place-content: center;
+                margin-bottom: 10px;
+            }
+
+            #nav-btn {
+                margin-bottom: 20px;
+            }
+
+            /* SECTION */
+            .intro {
+                padding: 80px 50px 0px 50px;
+            }
+
+            #intro-top {
+                font-size: 50px;
+            }
+
+            #intro-main {
+                font-size: 80px;
+            }
+
+            #intro-state {
+                font-size: 20px;
+            }
+
+            #btn1 {
+                font-size: 22px;
+            }
+
+            /* Enrol now */
+
+            .to {
+                display: block;
+                flex-wrap: wrap;
+                height: 200px;
+                margin: 0px;
+            }
+
+            .toge {
+                padding-top: 30px;
+            }
+
+            #icon1 {
+                width: 85px;
+                height: 80px;
+                padding: 10px;
+                font-size: 50px;
+                margin-right: 10px;
+            }
+
+            #base-head {
+                font-size: 20px;
+            }
+
+            #rem {
+                font-size: 16px;
+            }
+
+            #btn2 {
+                padding: 15px 25px;
+                font-size: 17px;
+                margin: 15px 0px 0px 110px;
+            }
+
+            /* ABOUT */
+            .about {
+                height: 1250px;
+                margin-top: 150px;
+                padding-top: 80px;
+            }
+
+            .about-join {
+                display: grid;
+                place-content: center;
+            }
+
+            .image2 {
+                width: 600px;
+                height: 600px;
+                margin-bottom: 40px;
+            }
+
+            .topic {
+                width: 600px;
+            }
+
+            #topic-head {
+                font-size: 30px;
+                margin-bottom: 25px;
+            }
+
+            #topic-text {
+                font-size: 20px;
+            }
+
+            /* OFFER */
+            .offer {
+                height: 950px;
+            }
+
+            .offer-block {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .block1,
+            .block2 {
+                height: 350px;
+                width: 320px;
+            }
+
+            /* ADVERT */
+            #ad-text {
+                font-size: 50px;
+            }
+
+            #small {
+                font-size: 40px;
+            }
+
+            #big {
+                font-size: 80px;
+            }
+
+            /* FOOTER */
+
+            footer {
+                height: 700px;
+            }
+
+            .foot-cover {
+                display: block;
+                padding-top: 100px;
+            }
+
+            #logofooter {
+                width: 400px;
+                margin-left: 30px;
+            }
+
+            .touch {
+                font-size: 16px;
+                margin: 0px 0px 0px 35px;
+            }
+
+            #touch-head {
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (min-width: 501px) and (max-width: 660px) {
+            #intro-top {
+                font-size: 45px;
+            }
+
+            #intro-main {
+                font-size: 55px;
+            }
+
+            .about {
+                height: 1150px;
+            }
+
+            .image2 {
+                width: 480px;
+                height: 480px;
+                margin-bottom: 40px;
+            }
+
+            .topic {
+                width: 480px;
+            }
+
+            #topic-head {
+                font-size: 25px;
+                margin-bottom: 25px;
+            }
+
+            #topic-text {
+                font-size: 18px;
+            }
+
+            .offer {
+                height: 1700px;
+            }
+
+            .advert {
+                height: 500px;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .navig {
+                gap: 150px;
+            }
+
+            .intro {
+                padding: 70px 10px 0px 30px;
+            }
+
+            #intro-top {
+                font-size: 50px;
+            }
+
+            #intro-main {
+                font-size: 60px;
+            }
+
+            #intro-state {
+                font-size: 20px;
+            }
+
+            .to {
+                height: 180px;
+            }
+
+            .toge {
+                padding-top: 10px;
+            }
+
+            #icon1 {
+                width: 80px;
+                height: 80px;
+                padding: 10px;
+                font-size: 50px;
+                margin-right: 10px;
+            }
+
+            .part {
+                width: 70%;
+            }
+
+            #base-head {
+                font-size: 20px;
+            }
+
+            #rem {
+                font-size: 14px;
+            }
+
+            #btn2 {
+                padding: 15px 25px;
+                font-size: 15px;
+                margin-top: 15px;
+                margin-left: 120px;
+            }
+
+            /* ABOUT */
+            .about {
+                height: 1100px;
+                margin-top: 150px;
+                padding-top: 80px;
+            }
+
+            .image2 {
+                width: 400px;
+                height: 400px;
+                margin-bottom: 40px;
+            }
+
+            .topic {
+                width: 400px;
+            }
+
+            #topic-head {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+
+            #topic-text {
+                font-size: 17px;
+            }
+
+            /* OFFER */
+            .offer {
+                height: 1650px;
+            }
+
+            /* ADVERT */
+
+            .advert {
+                height: 500px;
+            }
+
+            #big {
+                font-size: 70px;
+            }
+
+            /* FOOTER */
+            #logofooter {
+                width: 300px;
+            }
+        }
+
+        @media screen and (max-width: 390px) {
+
+            .navig {
+                gap: 50px;
+            }
+
+            .intro {
+                padding: 70px 20px 0px 20px;
+            }
+
+            #intro-top {
+                font-size: 35px;
+            }
+
+            #intro-main {
+                font-size: 45px;
+            }
+
+            #intro-state {
+                font-size: 17px;
+            }
+
+            #btn2 {
+                margin-left: 100px;
+            }
+
+            /* ABOUT */
+            .about {
+                height: 1050px;
+            }
+
+            .image2 {
+                width: 300px;
+                height: 300px;
+                margin-bottom: 40px;
+            }
+
+            .topic {
+                width: 300px;
+            }
+
+            /* ADVERT */
+            #ad-text {
+                font-size: 45px;
+            }
+
+            #big {
+                font-size: 55px;
+            }
+
+            /* FOOTER */
+            #logofooter {
+                width: 280px;
+                margin-left: 20px;
+            }
+
+            .touch {
+                margin: 0px 0px 0px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <head>
+        <nav>
+            <div class="navig">
+                <div class="logo">
+                    <img src="images/clever mind logo text.png" alt="our logo" id="logo">
+                </div>
+
+                <button class="menu-toggle" onclick="toggleMenu()" id="tog-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <ul id="menu">
+                <li><a href="clever_mind.html" id="nav-link">Home</a></li>
+                <li><a href="clever_academic.html" id="nav-link">Academics</a></li>
+                <li><a href="clever_enrol.html" id="nav-link">Enrol</a></li>
+                <li><a href="clever_login.html" id="nav-link">Student Login</a></li>
+                <li><a href="mailto:clevermindschool@gmail.com?subject=Letter%20of%20Enquiry" id="nav-btn">For
+                        Enquiry</a></li>
+            </ul>
+
+        </nav>
+    </head>
+
+    <!-- Introduction page -->
+    <section>
+        <div class="intro">
+            <h3 id="intro-top">Currently Giving</h3>
+            <h1 id="intro-main">ADMISSION!</h1>
+            <p id="intro-state">
+                There is an on going admission program into all classes,<br>
+                from Nursery, Basic and even to Secondary classes.
+            </p>
+            <a href="clever_enrol.html">
+                <input type="button" name="btn" value="Enrol Now" id="btn1">
+            </a>
+            
+        </div>
+
+        <!-- Enrol/contact us -->
+        <div class="top-base">
+            <div class="to">
+                <div class="toge">
+                    <i class="fa-solid fa-award" id="icon1"></i>
+
+                    <div class="part">
+                        <h3 id="base-head">Enrol Your Child Now</h3>
+                        <p id="rem">
+                            Place your child in our care and give them the best education they deserve.
+                        </p>
+                    </div>
+                </div>
+
+
+                <input type="submit" name="btn2" value="contact us" id="btn2">
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <div class="about">
+        <div class="about-join">
+            <img src="images/pic1.jpeg" alt="kids image" class="image2">
+
+            <div class="topic">
+                <h2 id="topic-head">Empowering Children with Quality Education</h2>
+                <p id="topic-text">
+                    At our school, we believe every child deserves an education that ignites
+                    their curiosity, builds their confidence, and prepares them for a bright future.
+                    We move beyond standardized learning to create a nurturing environment where individual
+                    talents are discovered and championed. Our dedicated teachers provide a dynamic
+                    and engaging curriculum that fosters not just academic excellence, but also essential
+                    character traits like resilience, creativity, and kindness. By enrolling your child with us,
+                    you are not just choosing a school, but a partner in nurturing a capable, well-rounded,
+                    and inspired young individual, fully equipped to thrive in the world. Give your child the
+                    foundation they deserve—enroll today.
+                </p>
+
+                <input type="submit" name="btn3" value="Learn more" id="btn3">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- OFFERS -->
+    <div class="offer">
+        <h3 id="offer-title">WHAT WE OFFER</h3>
+        <div class="offer-block">
+            <div class="block1">
+                <i class="fa-solid fa-user-graduate" id="icon2"></i>
+                <h4 id="offer-head">CERTIFIED TEACHERS</h4>
+                <p id="offer-text">
+                    We employ certified teachers with good degrees to inculcate
+                    the required knowledge and information your child needs to
+                    excel academically.
+                </p>
+            </div>
+            <div class="block2">
+                <i class="fa-solid fa-graduation-cap" id="icon2"></i>
+                <h4 id="offer-head">QUALITY EDUCATION</h4>
+                <p id="offer-text">
+                    We pride ourselves with the ability and aim to bring forth
+                    children of golden excellence in their academic lives and
+                    paves way for a good future.
+                </p>
+            </div>
+            <div class="block1">
+                <i class="fas fa-school" id="icon2"></i>
+                <h4 id="offer-head">EQUIPPED ENVIRONMENT</h4>
+                <p id="offer-text">
+                    Our school comprises of all available equipment need to
+                    successfully carry out day-to-day academic activities, with
+                    labs and theatres for practical learning.
+                </p>
+            </div>
+            <div class="block2">
+                <i class="fa-solid fa-list-check" id="icon2"></i>
+                <h4 id="offer-head">GOOD MANAGEMENT</h4>
+                <p id="offer-text">
+                    We handle school activities as the top goal with excellent
+                    cordination and carrying out of discipline amongst students
+                    to enable a safe environment for every student.
+                </p>
+            </div>
+        </div>
+
+        <div class="btn4">
+            <input type="submit" name="btn4" value="More info" id="btn4">
+        </div>
+
+    </div>
+
+    <!-- Advert -->
+    <div class="advert">
+        <h1 id="ad-text">Your Child's Education <br><span id="small">is Our</span>
+            <br><span id="big">TOP PRIORITY</span>
+        </h1>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <div class="foot-cover">
+            <div class="logo-foot">
+                <img src="images/clever mind logo text.png" alt="our logo" id="logofooter">
+            </div>
+
+            <div class="touch">
+                <h3 id="touch-head">QUICK LINKS</h3>
+                <a href="clever_mind.html" class="link">> Home</a><br>
+                <a href="clever_academic.html" class="link">> Academics</a><br>
+                <a href="clever_enrol.html" class="link">> Enrol</a><br>
+                <a href="#" class="link">> Check Result</a><br>
+            </div>
+
+            <div class="touch">
+                <h3 id="touch-head">VISIT US @</h3>
+                <ul class="fa-ul">
+                    <li id="list"><i class="fa-solid fa-location-dot" id="icon3"></i>
+                        <p id="add">
+                            12, Mustapha Street, Off Upper Mission, Aduwawa, Benin City, Edo State, Nigeria.
+                        </p>
+                    </li>
+                    <li id="list2"><a href="mailto:clevermindschool@gmail.com" id="list2"><i
+                                class="fa-solid fa-envelope" id="icon3"></i>
+                            clevermindschool@gmail.com</a></li><br>
+                    <li id="list2"><a href="+2349127084250" id="list2"><i class="fa-solid fa-phone"
+                                id="icon3"></i>+2349127084250</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menuBar = document.getElementById('menu');
+            menuBar.classList.toggle('active');
+        }
+
+        // Optional: Keep menu state in sessionStorage
+        window.addEventListener('beforeunload', function () {
+            const menuBar = document.getElementById('menu');
+            sessionStorage.setItem('menuState', menuBar.classList.contains('active'));
+        });
+
+        window.addEventListener('load', function () {
+            const savedState = sessionStorage.getItem('menuState');
+            if (savedState === 'true') {
+                document.getElementById('menu').classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

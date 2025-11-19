@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleverMind Academics Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
+    <style>
+        :root {
+            --first-color: rgb(12, 82, 12);
+            --font-family: 'Noto Sans';
+            --font-color: #fff;
+            --font-color2: orange;
+            --color1: rgb(0, 0, 26);
+            --color2: #e6e6e6bb;
+        }
+
+        * {
+            padding: 0;
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 100%;
+        }
+
+        nav {
+            background: var(--first-color);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 230px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        #logo {
+            width: 200px;
+            margin: 10px;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        li a {
+            text-decoration: none;
+            color: var(--font-color);
+            margin-right: 30px;
+            font-family: var(--font-family);
+            padding: 10px;
+            transition: .7s ease;
+            border-radius: 5px;
+        }
+
+        #nav-link:hover {
+            background: forestgreen;
+            transition: .7s ease-in-out;
+        }
+
+        #nav-btn {
+            background: #ffffff4d;
+            border-radius: 20px;
+            padding: 10px 20px;
+            transition: .7s ease;
+        }
+
+        #nav-btn:hover {
+            background: #000;
+            transition: .7s ease-in-out;
+        }
+
+        #tog-btn {
+            display: none;
+            font-size: 20px;
+            background: transparent;
+            color: var(--font-color);
+            border: none;
+            cursor: pointer;
+        }
+
+        /* FRONT */
+
+        .front {
+            background: var(--color2);
+            width: 100%;
+            height: 600px;
+        }
+
+        #front-head {
+            font-family: var(--font-family);
+            font-size: 40px;
+            padding: 10px 20px;
+            background: var(--color1);
+            color: var(--font-color);
+            margin-bottom: 40px;
+        }
+
+        .group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            gap: 30px;
+        }
+
+        #image3 {
+            width: 600px;
+            border-radius: 30px;
+            box-shadow: 0px 4px 25px 0px #5c5c5c6b;
+        }
+
+        .detail {
+            font-family: var(--font-family);
+            width: 570px;
+            height: 400px;
+            background: var(--font-color);
+            padding: 20px;
+        }
+
+        #detail-head {
+            font-size: 30px;
+            color: var(--color1);
+        }
+
+        hr {
+            margin: 20px 0px;
+            border: 2px solid var(--color1);
+            border-style: dashed;
+        }
+
+        #detail-text {
+            text-align: justify;
+            font-size: 18px;
+        }
+
+
+        /* LEARN */
+        .learn {
+            width: 100%;
+            height: 750px;
+        }
+
+        #learn-head {
+            font-family: 'Tahoma';
+            font-size: 50px;
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 30px;
+            margin-top: 30px;
+            width: 300px;
+        }
+
+        .bond,
+        .package {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .package {
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .pack {
+            width: 370px;
+            height: 280px;
+            text-align: center;
+        }
+
+        .icon4 {
+            background: var(--font-color2);
+            border-radius: 50%;
+            margin-bottom: 10px;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #icon4 {
+            color: var(--font-color);
+            font-size: 70px;
+        }
+
+        #hpack {
+            font-family: 'Tahoma';
+            font-size: 25px;
+        }
+
+        #tpack {
+            font-family: 'Tahoma';
+            font-size: 17px;
+        }
+
+        .btn4 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #btn4 {
+            background: var(--font-color2);
+            color: #000;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-family: 'Tahoma';
+            font-size: 18px;
+            transition: .5s ease;
+        }
+
+        #btn4:hover {
+            transform: scaleX(110%);
+            transition: .5s ease-in-out;
+        }
+
+
+        /* E-LEARN */
+
+        .elearn {
+            width: 100%;
+            height: 700px;
+        }
+
+        #soft {
+            color: rgb(105, 105, 105);
+            text-align: center;
+            font-family: var(--font-family);
+            margin-bottom: 50px;
+        }
+
+        .bond-pack {
+            width: 280px;
+            height: 400px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px 0px gray;
+            cursor: pointer;
+            transition: .7s ease;
+            margin: 13px;
+            background: var(--font-color);
+        }
+
+        .bond-pack:hover {
+            transition: .7s ease-in-out;
+            transform: translateY(-5%);
+        }
+
+        #hbond {
+            font-size: 22px;
+            font-family: var(--font-family);
+            margin-bottom: 10px;
+        }
+
+        #tbond {
+            font-size: 16px;
+            font-family: var(--font-family);
+            text-align: justify;
+        }
+
+        #icon5 {
+            font-size: 70px;
+            color: var(--first-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #btn5 {
+            padding: 10px 20px;
+            background: var(--first-color);
+            color: var(--font-color);
+            border: none;
+            cursor: pointer;
+            font-family: 'Tahoma';
+            margin-top: 10px;
+            font-size: 16px;
+            transition: .5s ease;
+        }
+
+        #btn5:hover {
+            transition: .5s ease-in-out;
+            background: #000;
+        }
+
+        .btn6 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #btn6 {
+            background: #000;
+            color: var(--font-color);
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-family: 'Tahoma';
+            margin-top: 30px;
+            font-size: 18px;
+            transition: .5s ease;
+        }
+
+        #btn6:hover {
+            transform: scale(1.1);
+            transition: .5s ease-in-out;
+        }
+
+
+        /* FOOTER */
+        footer {
+            height: 550px;
+            width: 100%;
+            background: var(--first-color);
+            margin-top: -300px;
+        }
+
+        .con,
+        .foot-cover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 280px;
+        }
+
+        #logofooter {
+            width: 400px;
+            margin-top: -50px;
+        }
+
+        .touch {
+            width: 350px;
+            color: var(--font-color);
+            font-family: 'Tahoma';
+            font-size: 16px;
+        }
+
+        #touch-head {
+            font-size: 25px;
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+
+        #icon3 {
+            margin-right: 20px;
+            font-size: 20px;
+        }
+
+        .fa-ul {
+            margin-left: 0px;
+        }
+
+        #list2 {
+            cursor: pointer;
+            transition: .5s ease;
+            display: inline;
+            line-height: 45px;
+            margin-left: -5px;
+            margin-right: 0px;
+            font-family: 'Tahoma';
+        }
+
+        .link:hover,
+        #list:hover,
+        #list2:hover {
+            color: var(--font-color2);
+            transition: .5s ease-in-out;
+        }
+
+        #list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: .5s ease;
+            margin-bottom: 15px;
+        }
+
+        #add {
+            margin-left: 10px;
+        }
+
+        .link {
+            margin-bottom: 50px;
+            text-decoration: none;
+            font-family: 'Tahoma';
+            font-size: 18px;
+            color: var(--font-color);
+            transition: .5s ease;
+            line-height: 35px;
+        }
+
+        @media screen and (max-width: 1100px) {
+            nav {
+                display: block;
+                gap: 100px;
+                margin-bottom: -10px;
+            }
+
+            #tog-btn {
+                display: block;
+            }
+
+            #menu {
+                display: none;
+            }
+
+            #menu.active {
+                display: block;
+            }
+
+            .navig {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 250px;
+            }
+
+            ul li {
+                display: grid;
+                place-content: center;
+                margin-bottom: 10px;
+            }
+
+            #nav-btn {
+                margin-bottom: 20px;
+            }
+
+            .front {
+                height: 550px;
+            }
+
+            .group {
+                gap: 15px;
+            }
+
+            #image3 {
+                width: 520px;
+            }
+
+            .detail {
+                width: 500px;
+                height: 350px;
+            }
+
+            #detail-head {
+                font-size: 25px;
+            }
+
+            #detail-text {
+                font-size: 15px;
+            }
+
+            /* LEARN */
+            .pack {
+                width: 350px;
+            }
+
+            /* E-LEARN */
+            #tbond {
+                font-size: 14.5px;
+            }
+
+            /* FOOTER */
+            #logofooter {
+                width: 300px;
+            }
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1050px) {
+            .front {
+                height: 1000px;
+            }
+
+            .group {
+                flex-wrap: wrap;
+                align-content: space-around;
+            }
+
+            #image3 {
+                width: 600px;
+                margin-bottom: 20px;
+            }
+
+            .detail {
+                width: 600px;
+                height: 400px;
+            }
+
+            #detail-head {
+                font-size: 30px;
+            }
+
+            #detail-text {
+                text-align: justify;
+                font-size: 18px;
+            }
+
+            .learn {
+                height: 1100px;
+            }
+
+            .bond {
+                flex-wrap: wrap;
+                align-content: space-between;
+            }
+
+            .elearn {
+                height: 1100px;
+            }
+
+            #logofooter {
+                width: 250px;
+                margin-left: 30px;
+            }
+
+            .touch {
+                width: 250px;
+                font-size: 12px;
+                margin: 0px 0px 0px 35px;
+            }
+
+            #touch-head {
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
+
+            #icon3 {
+                font-size: 16px;
+                margin-right: 0px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+
+            /* FRONT */
+            .front {
+                height: 1000px;
+            }
+
+            .group {
+                flex-wrap: wrap;
+                align-content: space-around;
+            }
+
+            #image3 {
+                width: 600px;
+                margin-bottom: 20px;
+            }
+
+            .detail {
+                width: 600px;
+                height: 400px;
+            }
+
+            #detail-head {
+                font-size: 30px;
+            }
+
+            #detail-text {
+                text-align: justify;
+                font-size: 18px;
+            }
+
+            /* LEARN */
+            .learn {
+                height: 1000px;
+            }
+
+            .package {
+                flex-wrap: wrap;
+                align-content: space-between;
+            }
+
+            .pack {
+                flex-basis: 50%;
+            }
+
+            .bond {
+                flex-wrap: wrap;
+                align-content: space-between;
+            }
+
+            .elearn {
+                height: 1100px;
+            }
+
+            /* FOOTER */
+            footer {
+                height: 1000px;
+                margin-top: -300px;
+            }
+
+            .foot-cover {
+                display: block;
+                padding-top: 400px;
+            }
+
+            #logofooter {
+                width: 400px;
+                margin-left: 30px;
+            }
+
+            .touch {
+                font-size: 16px;
+                margin: 0px 0px 0px 35px;
+            }
+
+            #touch-head {
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 620px) {
+            #image3 {
+                width: 500px;
+            }
+
+            .elearn {
+                height: 1950px;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .navig {
+                gap: 140px;
+            }
+
+            #front-head {
+                font-size: 30px;
+            }
+
+            #image3 {
+                width: 400px;
+            }
+
+            .detail {
+                width: 400px;
+                height: 550px;
+            }
+
+            #detail-text {
+                font-size: 16px;
+            }
+
+            /* LEARN */
+            .learn {
+                height: 1900px;
+            }
+
+            .pack {
+                flex-basis: 70%;
+            }
+
+            /* E-LEARN */
+            .elearn {
+                height: 1900px;
+            }
+
+            .bond-pack {
+                width: 320px;
+                height: 380px;
+            }
+        }
+
+        @media screen and (min-width: 391px) and (max-width: 450px) {
+            #image3 {
+                width: 350px;
+            }
+
+            #logofooter {
+                width: 320px;
+            }
+        }
+
+        @media screen and (max-width: 390px) {
+            .navig {
+                gap: 60px;
+            }
+
+            #image3 {
+                width: 300px;
+            }
+
+            .detail {
+                width: 400px;
+                height: 550px;
+            }
+
+            #detail-head {
+                font-size: 25px;
+            }
+
+            #detail-text {
+                font-size: 15px;
+            }
+
+            /* FOOTER */
+            #logofooter {
+                width: 280px;
+            }
+
+            .touch {
+                width: 300px;
+            }
+
+            #list {
+                width: 280px;
+                margin-left: 0px;
+            }
+
+            .foot-cover {
+                margin-left: -20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <head>
+        <nav>
+            <div class="navig">
+                <div class="logo">
+                    <img src="images/clever mind logo text.png" alt="our logo" id="logo">
+                </div>
+
+                <button class="menu-toggle" onclick="toggleMenu()" id="tog-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <ul id="menu">
+                <li><a href="clever_mind.html" id="nav-link">Home</a></li>
+                <li><a href="clever_academic.html" id="nav-link">Academics</a></li>
+                <li><a href="clever_enrol.html" id="nav-link">Enrol</a></li>
+                <li><a href="clever_login.html" id="nav-link">Student Login</a></li>
+                <li><a href="mailto:clevermindschool@gmail.com?subject=Letter%20of%20Enquiry" id="nav-btn">For
+                        Enquiry</a></li>
+            </ul>
+
+        </nav>
+    </head>
+
+    <!-- FRONT -->
+    <div class="front">
+
+        <h2 id="front-head">ACADEMIC EXPERIENCE</h2>
+
+        <div class="group">
+            <img src="images/pic3.jpg" alt="children image" id="image3">
+
+            <div class="detail">
+                <h3 id="detail-head">BETTER ACADEMIC CULTURE</h3>
+                <hr>
+                <p id="detail-text">
+                    Building upon the powerful idea that learning is an
+                    indestructible and deeply personal treasure, the goal of a
+                    better academic life for children is to nurture this joy of
+                    discovery. Instead of viewing education as a chore or a simple
+                    filling of a vessel, the focus should be on lighting a fire of
+                    curiosity within each child. By fostering an environment where
+                    children feel secure enough to take risks, ask questions,
+                    and learn from mistakes, we empower them to become resilient and
+                    confident lifelong learners. This approach ensures that the knowledge
+                    and character they develop are not only for passing exams but are
+                    built into the very foundation of who they become.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEARN -->
+    <div class="learn">
+        <h2 id="learn-head">For Learning</h2>
+
+        <div class="package">
+            <div class="pack">
+                <div class="icon4">
+                    <i class="fa-solid fa-microscope" id="icon4"></i>
+                </div>
+
+                <h4 id="hpack">SCIENCE LAB</h4>
+                <p id="tpack">
+                    We have a facinating lab for carrying out science experiment,
+                    and to create a better practical learning system.
+                </p>
+            </div>
+
+            <div class="pack">
+                <div class="icon4">
+                    <i class="fa-solid fa-computer" id="icon4"></i>
+                </div>
+
+                <h4 id="hpack">COMPUTER LAB</h4>
+                <p id="tpack">
+                    Students who are interested in Tech can indulge in coding
+                    practices and activities to gain a good foundation in tech.
+                </p>
+            </div>
+
+            <div class="pack">
+                <div class="icon4">
+                    <i class="fa-solid fa-palette" id="icon4"></i>
+                </div>
+
+                <h4 id="hpack">ART THEATRE</h4>
+                <p id="tpack">
+                    For acting, music, and other multimedia activies, our theatre
+                    hall is available to all students with artistic view.
+                </p>
+            </div>
+
+            <div class="pack">
+                <div class="icon4">
+                    <i class="fa-solid fa-business-time" id="icon4"></i>
+                </div>
+
+                <h4 id="hpack">SOCIAL STUDIO</h4>
+                <p id="tpack">
+                    Our school provides a place for social science/business students,
+                    students who long for business knowledge can learn.
+                </p>
+            </div>
+
+            <div class="pack">
+                <div class="icon4">
+                    <i class="fa-solid fa-book-open" id="icon4"></i>
+                </div>
+
+                <h4 id="hpack">LIBRARY</h4>
+                <p id="tpack">
+                    We provide a master library for all students to study for exams
+                    and other interesting purposes that students may desire.
+                </p>
+            </div>
+
+            <div class="pack">
+                <div class="icon4">
+                    <i class="fa-solid fa-volleyball" id="icon4"></i>
+                </div>
+
+                <h4 id="hpack">SPORT HALL</h4>
+                <p id="tpack">
+                    The sport hall is a place for all sporting activities including,
+                    football, volleyball, tennis and all other sport activities.
+                </p>
+            </div>
+        </div>
+
+        <div class="btn4">
+            <input type="submit" name="btn4" value="Explore >" id="btn4">
+        </div>
+    </div>
+
+
+    <!-- E-LEARN -->
+    <div class="elearn">
+        <h2 id="learn-head" title="Electronic Learning">E-Learning</h2>
+        <h5 id="soft">We offer an E-learning program to students interested in home school</h5>
+
+        <div class="bond">
+            <div class="bond-pack">
+                <i class="fa-solid fa-desktop" id="icon5"></i>
+                <h3 id="hbond">Computer Skills</h3>
+                <p id="tbond">
+                    To qualify for our Electronic Learning (E-learning) program,
+                    we require you to have a set of computation skills to enable
+                    smooth running in your learning scheme and having a personal
+                    computer is vital and important for this program.
+                </p>
+
+                <input type="submit" name="btn5" value="Learn skill" id="btn5">
+            </div>
+
+            <div class="bond-pack">
+                <i class="fa-solid fa-wifi" id="icon5"></i>
+                <h3 id="hbond">Internet Service</h3>
+                <p id="tbond">
+                    The program requires an active internet connection that will
+                    be stable and not falter in times of attending classes and other
+                    extra curriculum activities. It is adviceable to purchase a
+                    networking device for stable connection.
+                </p>
+
+                <input type="submit" name="btn5" value="Learn skill" id="btn5">
+            </div>
+
+            <div class="bond-pack">
+                <i class="fa-solid fa-book-atlas" id="icon5"></i>
+                <h3 id="hbond" title="Electronic Text Book">E-text Book</h3>
+                <p id="tbond">
+                    We make Electronic Text book availability for home school
+                    students that will foster their academic needs and help
+                    them in terms of source knowledge (place to draw knowledge
+                    in time of need) and promote them in educational activities.
+                </p>
+
+                <input type="submit" name="btn5" value="Learn skill" id="btn5">
+            </div>
+
+            <div class="bond-pack">
+                <i class="fa-solid fa-circle-user" id="icon5"></i>
+                <h3 id="hbond">On-line Classes</h3>
+                <p id="tbond">
+                    Students who qualify for e-learning are required to attend
+                    on-line classes and perform learning activies with certified
+                    tutors who will educate them on their learning curve and
+                    help them grow in their academical journey.
+                </p>
+
+                <input type="submit" name="btn5" value="Learn skill" id="btn5">
+            </div>
+        </div>
+
+        <div class="btn6">
+            <input type="submit" name="btn6" value="Apply Now" id="btn6">
+        </div>
+
+    </div>
+
+
+    <!-- footer -->
+    <footer>
+        <div class="foot-cover">
+            <div class="logo-foot">
+                <img src="images/clever mind logo text.png" alt="our logo" id="logofooter">
+            </div>
+
+            <div class="touch">
+                <h3 id="touch-head">QUICK LINKS</h3>
+                <a href="clever_mind.html" class="link">> Home</a><br>
+                <a href="clever_academic.html" class="link">> Academics</a><br>
+                <a href="clever_enrol.html" class="link">> Enrol</a><br>
+                <a href="#" class="link">> Check Result</a><br>
+            </div>
+
+            <div class="touch">
+                <h3 id="touch-head">VISIT US @</h3>
+                <ul class="fa-ul">
+                    <li id="list"><i class="fa-solid fa-location-dot" id="icon3"></i>
+                        <p id="add">
+                            12, Mustapha Street, Off Upper Mission, Aduwawa, Benin City, Edo State, Nigeria.
+                        </p>
+                    </li>
+                    <li id="list2"><a href="mailto:clevermindschool@gmail.com" id="list2"><i
+                                class="fa-solid fa-envelope" id="icon3"></i>
+                            clevermindschool@gmail.com</a></li><br>
+                    <li id="list2"><a href="+2349127084250" id="list2"><i class="fa-solid fa-phone"
+                                id="icon3"></i>+2349127084250</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menuBar = document.getElementById('menu');
+            menuBar.classList.toggle('active');
+        }
+
+        // Optional: Keep menu state in sessionStorage
+        window.addEventListener('beforeunload', function () {
+            const menuBar = document.getElementById('menu');
+            sessionStorage.setItem('menuState', menuBar.classList.contains('active'));
+        });
+
+        window.addEventListener('load', function () {
+            const savedState = sessionStorage.getItem('menuState');
+            if (savedState === 'true') {
+                document.getElementById('menu').classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
