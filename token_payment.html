@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleverMind Applicant Payment Fee</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
+    <style>
+        :root {
+            --first-color: rgb(12, 82, 12);
+            --font-family: 'Noto Sans';
+            --font-color: #fff;
+            --font-color2: orange;
+            --color1: rgb(0, 0, 26);
+            --color2: #e6e6e6bb;
+        }
+
+        * {
+            padding: 0;
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 100%;
+            background: var(--color2);
+        }
+
+        .heading {
+            background: var(--first-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        #school-logo {
+            width: 150px;
+        }
+
+        #head {
+            color: var(--font-color);
+            font-family: var(--font-family);
+        }
+
+        .portal-info {
+            width: 70%;
+            background: var(--font-color);
+            padding: 20px;
+            line-height: 30px;
+        }
+
+        #hbio {
+            font-family: var(--font-family);
+            font-size: 25px;
+            color: var(--font-color2);
+            margin-bottom: 10px;
+        }
+
+        .applicant {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .pay {
+            font-family: var(--font-family);
+            text-align: right;
+        }
+
+        #pale {
+            font-weight: normal;
+        }
+
+        .base-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            text-align: left;
+        }
+
+        .ans,
+        .base {
+            font-family: 'Times New Roman';
+            font-size: 20px;
+        }
+
+        .ans {
+            font-weight: normal;
+        }
+
+        .ask {
+            margin: 0;
+            width: 25%;
+        }
+
+        .answer {
+            margin: 0;
+            width: 75%;
+        }
+
+        #note {
+            margin-top: 10px;
+        }
+
+        span {
+            color: red;
+            font-weight: bold;
+        }
+
+        #btn9 {
+            padding: 10px 20px;
+            background: var(--first-color);
+            color: var(--font-color);
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 960px) {
+            .portal-info {
+                width: 85%;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .ask {
+                margin: 0;
+                width: 40%;
+            }
+
+            .answer {
+                margin: 0;
+                width: 60%;
+            }
+        }
+
+        @media screen and (max-width: 540px) {
+            #head {
+                font-size: 25px;
+            }
+
+            .ask {
+                margin: 0;
+                width: 50%;
+            }
+
+            .answer {
+                margin: 0;
+                width: 50%;
+            }
+
+            .ans,
+            .base {
+                font-size: 16px;
+            }
+
+            #hbio {
+                font-size: 20px;
+            }
+
+            #spay {
+                font-size: 16px;
+            }
+
+            #note {
+                line-height: 20px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .portal-info {
+                width: 92%;
+            }
+
+            #school-logo {
+                width: 100px;
+            }
+
+            #head {
+                font-size: 20px;
+            }
+
+            #spay {
+                font-size: 14px;
+            }
+
+            .ans,
+            .base {
+                font-size: 14px;
+            }
+
+            #hbio {
+                font-size: 18px;
+            }
+
+            #note {
+                font-size: 13px;
+            }
+
+            #btn9 {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="heading">
+            <div class="logo">
+                <img src="images/clever mind logo text.png" alt="school logo" id="school-logo">
+            </div>
+            <h1 id="head">Student Application Portal</h1>
+        </div>
+
+        <div class="portal-info">
+            <div class="stu-base">
+                <div class="pay">
+                    <h3 id="spay"><span>Payment Status: </span><i id="pale">pending...</i></h3>
+                </div>
+
+                <h3 id="hbio">Student Bio:</h3>
+                <div class="applicant">
+                    <div class="base-info">
+                        <div class="ask">
+                            <h4 class="base">Fullname: </h4>
+                            <h4 class="base">DOB: </h4>
+                            <h4 class="base">Email: </h4>
+                            <h4 class="base">Phone Number: </h4>
+                            <h4 class="base">Grade: </h4>
+                        </div>
+
+                        <div class="answer">
+                            <h4 class="ans">John Carlson</h4>
+                            <h4 class="ans">11/10/2015</h4>
+                            <h4 class="ans">someone@example.com</h4>
+                            <h4 class="ans">08073415395</h4>
+                            <h4 class="ans">Basic 5 (B)</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="apply">
+                <h3 id="hbio">Application Criteria:</h3>
+                <div class="applicant">
+                    <div class="base-info">
+                        <div class="ask">
+                            <h4 class="base">Payment Purpose: </h4>
+                            <h4 class="base">Amount: </h4>
+                        </div>
+
+                        <div class="answer">
+                            <h4 class="ans">Registration Fee</h4>
+                            <h4 class="ans">12880.50</h4>
+                        </div>
+                    </div>
+
+                    <p id="note"><i><span>*Note: </span>A non-refundable amount is about to be paid required by
+                            management
+                            to complete your admission process</i></p>
+                </div>
+
+
+            </div>
+
+            <a href="#">
+                <button type="submit" id="btn9">Click to pay</button>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
