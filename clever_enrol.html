@@ -348,11 +348,11 @@
                 display: block;
             }
 
-            #image4{
+            #image4 {
                 width: 100%;
             }
 
-            .student{
+            .student {
                 padding: 30px 40px;
             }
 
@@ -371,11 +371,11 @@
         }
 
         @media screen and (max-width: 400px) {
-            .navig{
+            .navig {
                 gap: 60px;
             }
 
-            #hstudent{
+            #hstudent {
                 font-size: 28px;
             }
 
@@ -402,7 +402,8 @@
                 <li><a href="clever_academic.html" id="nav-link">Academics</a></li>
                 <li><a href="clever_enrol.html" id="nav-link">Enrol</a></li>
                 <li><a href="clever_login.html" id="nav-link">Student Login</a></li>
-                <li><a href="mailto:clevermindschool@gmail.com?subject=Letter%20of%20Enquiry" id="nav-btn">For Enquiry</a></li>
+                <li><a href="mailto:clevermindschool@gmail.com?subject=Letter%20of%20Enquiry" id="nav-btn">For
+                        Enquiry</a></li>
             </ul>
 
         </nav>
@@ -421,145 +422,150 @@
     </div>
 
     <!-- Student info -->
-    <div class="student">
-        <h3 id="hstudent">Student Information</h3>
-        <h5 id="subs"><i>Note: parameters marked with the <span id="im">*</span> symbol indicate important information
-                and must be filled.</i></h5>
+    <form action="token_payment.html" method="get">
+        <div class="student">
+            <h3 id="hstudent">Student Information</h3>
+            <h5 id="subs"><i>Note: parameters marked with the <span id="im">*</span> symbol indicate important
+                    information
+                    and must be filled.</i></h5>
 
-        <h4 id="tstudent">NAME <span id="im">*</span></h4>
-        <div class="form-group">
-            <div class="inp">
-                <input type="text" name="text1" id="text1" required>
-                <label for="text1"><i>Last Name</i></label>
+            <h4 id="tstudent">NAME <span id="im">*</span></h4>
+            <div class="form-group">
+                <div class="inp">
+                    <input type="text" name="text1" id="text1" required>
+                    <label for="text1"><i>Last Name</i></label>
+                </div>
+
+                <div class="inp">
+                    <input type="text" name="text1" id="text1" required>
+                    <label for="text1"><i>First Name</i></label>
+                </div>
+
+                <div class="inp">
+                    <input type="text" name="text1" id="text1">
+                    <label for="text1"><i>Other Names (Optional)</i></label>
+                </div>
             </div>
 
-            <div class="inp">
-                <input type="text" name="text1" id="text1" required>
-                <label for="text1"><i>First Name</i></label>
+            <h4 id="tstudent">DATE OF BIRTH <span id="im">*</span></h4>
+            <div class="form-group">
+                <div class="inp2">
+                    <input type="date" name="text1" id="text1" required>
+                </div>
             </div>
 
-            <div class="inp">
-                <input type="text" name="text1" id="text1" required>
-                <label for="text1"><i>Other Names (Optional)</i></label>
+            <h4 id="tstudent">GENDER <span id="im">*</span></h4>
+            <div class="form-group">
+                <div class="inp2">
+                    <select name="text1" id="text1" required>
+                        <option value="">Select</option>
+                        <option value="01">Male</option>
+                        <option value="02">Female</option>
+                    </select>
+                </div>
             </div>
+
+            <h4 id="tstudent">EMAIL ADDRESS <span id="im">*</span></h4>
+            <div class="form-group2">
+                <div class="inp2">
+                    <input type="email" name="text1" id="text2" class="emailtext1" required>
+                </div>
+            </div>
+
+            <h4 id="tstudent">ADDRESS <span id="im">*</span></h4>
+            <div class="form-group2">
+                <div class="inp4">
+                    <input type="text" name="text1" id="text2" required>
+                </div>
+            </div>
+
+            <h4 id="tstudent">GRADE LEVEL <span id="im">*</span></h4>
+            <div class="form-group">
+                <div class="inp2">
+                    <select name="text1" id="text1" required>
+                        <option value="">Select</option>
+                        <option value="01">Basic</option>
+                        <option value="02">Junior</option>
+                        <option value="03">Senior</option>
+                    </select>
+                </div>
+            </div>
+
+            <h4 id="tstudent">CLASS GRADE <span id="im">*</span></h4>
+            <div class="form-group">
+                <div class="inp2">
+                    <select name="text1" id="text1" required>
+                        <option value="">Select</option>
+                        <option value="01">Basic 1</option>
+                        <option value="02">Basic 2</option>
+                        <option value="03">Basic 3</option>
+                        <option value="03">Basic 4</option>
+                        <option value="03">Basic 5</option>
+                    </select>
+                </div>
+            </div>
+
         </div>
 
-        <h4 id="tstudent">DATE OF BIRTH <span id="im">*</span></h4>
-        <div class="form-group">
-            <div class="inp2">
-                <input type="date" name="text1" id="text1" required>
+        <!-- Parent info -->
+        <div class="student">
+            <h3 id="hstudent">Parent/Guardian Information</h3>
+            <h5 id="subs"><i>Note: parameters marked with the <span id="im">*</span> symbol indicate important
+                    information
+                    and must be filled.</i></h5>
+
+            <h4 id="tstudent">NAME <span id="im">*</span></h4>
+            <div class="form-group3">
+                <div class="inp">
+                    <input type="text" name="text1" id="text1" required>
+                    <label for="text1"><i>Last Name</i></label>
+                </div>
+
+                <div class="inp">
+                    <input type="text" name="text1" id="text1" required>
+                    <label for="text1"><i>First Name</i></label>
+                </div>
             </div>
+
+            <h4 id="tstudent">PHONE NUMBER <span id="im">*</span></h4>
+            <div class="form-group2">
+                <div class="inp2">
+                    <input type="number" name="text1" id="text2" class="textinp" required>
+                </div>
+            </div>
+
+            <h4 id="tstudent">EMAIL ADDRESS <span id="im">*</span></h4>
+            <div class="form-group2">
+                <div class="inp2">
+                    <input type="email" name="text1" id="text2" class="textinp" required>
+                </div>
+            </div>
+
+            <h4 id="tstudent">OCCUPATION</h4>
+            <div class="form-group2">
+                <div class="inp2">
+                    <input type="text" name="text1" id="text2" class="textinp">
+                </div>
+            </div>
+
+            <h4 id="tstudent">ADDRESS <span id="im">*</span></h4>
+            <div class="form-group2">
+                <div class="inp4">
+                    <input type="text" name="text1" id="text2" required>
+                </div>
+            </div>
+
+            <label for="check" class="pledge">
+                <input type="checkbox" name="check" id="check" required> I pledge and agree that all information provided
+                above is true and valid by the Government.
+            </label>
+
+            <a href="#" target="_blank">
+                <button type="submit" class="btn7">Register</button>
+            </a>
         </div>
+    </form>
 
-        <h4 id="tstudent">GENDER <span id="im">*</span></h4>
-        <div class="form-group">
-            <div class="inp2">
-                <select name="text1" id="text1" required>
-                    <option value="">Select</option>
-                    <option value="01">Male</option>
-                    <option value="02">Female</option>
-                </select>
-            </div>
-        </div>
-
-        <h4 id="tstudent">EMAIL ADDRESS <span id="im">*</span></h4>
-        <div class="form-group2">
-            <div class="inp2">
-                <input type="email" name="text1" id="text2" class="emailtext1" required>
-            </div>
-        </div>
-
-        <h4 id="tstudent">ADDRESS</h4>
-        <div class="form-group2">
-            <div class="inp4">
-                <input type="text" name="text1" id="text2" required>
-            </div>
-        </div>
-
-        <h4 id="tstudent">GRADE LEVEL <span id="im">*</span></h4>
-        <div class="form-group">
-            <div class="inp2">
-                <select name="text1" id="text1" required>
-                    <option value="">Select</option>
-                    <option value="01">Basic</option>
-                    <option value="02">Junior</option>
-                    <option value="03">Senior</option>
-                </select>
-            </div>
-        </div>
-
-        <h4 id="tstudent">CLASS GRADE <span id="im">*</span></h4>
-        <div class="form-group">
-            <div class="inp2">
-                <select name="text1" id="text1" required>
-                    <option value="">Select</option>
-                    <option value="01">Basic 1</option>
-                    <option value="02">Basic 2</option>
-                    <option value="03">Basic 3</option>
-                    <option value="03">Basic 4</option>
-                    <option value="03">Basic 5</option>
-                </select>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Parent info -->
-    <div class="student">
-        <h3 id="hstudent">Parent/Guardian Information</h3>
-        <h5 id="subs"><i>Note: parameters marked with the <span id="im">*</span> symbol indicate important information
-                and must be filled.</i></h5>
-
-        <h4 id="tstudent">NAME <span id="im">*</span></h4>
-        <div class="form-group3">
-            <div class="inp">
-                <input type="text" name="text1" id="text1" required>
-                <label for="text1"><i>Last Name</i></label>
-            </div>
-
-            <div class="inp">
-                <input type="text" name="text1" id="text1" required>
-                <label for="text1"><i>First Name</i></label>
-            </div>
-        </div>
-
-        <h4 id="tstudent">PHONE NUMBER <span id="im">*</span></h4>
-        <div class="form-group2">
-            <div class="inp2">
-                <input type="number" name="text1" id="text2" class="textinp" required>
-            </div>
-        </div>
-
-        <h4 id="tstudent">EMAIL ADDRESS</h4>
-        <div class="form-group2">
-            <div class="inp2">
-                <input type="email" name="text1" id="text2" class="textinp" required>
-            </div>
-        </div>
-
-        <h4 id="tstudent">OCCUPATION</h4>
-        <div class="form-group2">
-            <div class="inp2">
-                <input type="text" name="text1" id="text2" class="textinp" required>
-            </div>
-        </div>
-
-        <h4 id="tstudent">ADDRESS</h4>
-        <div class="form-group2">
-            <div class="inp4">
-                <input type="text" name="text1" id="text2" required>
-            </div>
-        </div>
-
-        <label for="check" class="pledge">
-            <input type="checkbox" name="check" id="check"> I pledge and agree that all information provided
-            above is true and valid by the Government.
-        </label>
-
-        <a href="#" target="_blank">
-            <button type="submit" class="btn7">Register</button>
-        </a>
-    </div>
 
     <script>
         function toggleMenu() {
